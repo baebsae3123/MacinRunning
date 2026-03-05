@@ -19,6 +19,8 @@
 | Oily_Food       | 기름진 음식 먹었는지 |
 | Water_Intake_ml | 물 섭취량       |
 
+MSE(:
+R2:
 
 
 # 프론트엔드
