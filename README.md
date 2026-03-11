@@ -14,18 +14,13 @@
 
 | 컬럼              | 의미          |
 | --------------- | ----------- |
-| Date            | 날짜          |
 | Acne_Count      | 여드름 개수      |
 | Sebum_Level     | 피지량 (1~3)   |
-| Skin_Irritation | 피부 자극 (0~5) |
-| Product_Used    | 사용한 화장품     |
+| Skin_Irritation | 피부 자극 (1~3) |
 | Sleep_Hours     | 수면시간        |
 | Oily_Food       | 기름진 음식 먹었는지 |
 | Water_Intake_ml | 물 섭취량       |
-
-MSE(:
-R2:
-
+등을 받아 예상하여 결과를 추측함 
 
 # 프론트엔드
 
