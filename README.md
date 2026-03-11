@@ -6,9 +6,9 @@
 
 # 백엔드
 
-서버:
+서버: http://127.0.0.1:5000/
 
-사용모델:
+사용모델: RandomForestRegressor
 
 데이터
 
