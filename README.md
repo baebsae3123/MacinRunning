@@ -6,6 +6,8 @@
 
 # 백엔드
 
+데이터 가져오는곳 : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset?resource=download
+
 서버: http://127.0.0.1:5000/
 
 사용모델: RandomForestRegressor
