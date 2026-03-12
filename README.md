@@ -28,3 +28,7 @@
 | Water_Intake_ml | 물 섭취량       |
 등을 받아 예상하여 결과를 추측함 
 
+# 사용 언어 + 프로그램
+## 🚀 My Tech Stack
+
+![Tech Stack](images/tech-stack.svg)
