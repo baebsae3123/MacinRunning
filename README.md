@@ -29,8 +29,6 @@
 등을 받아 예상하여 결과를 추측함 
 
 # 사용 언어 + 프로그램
-## 🚀 My Tech Stack
-
 ## 💻 Tech Stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
