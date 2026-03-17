@@ -42,8 +42,11 @@
 ## Database
 ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
 ## 핵심기능
-1.제품추천
-2.여드름 개수 확률계산
+🧠 건강 점수
+🌿 피부 점수
+📊 분석 결과
+🧴 추천 화장품
+건강 점수 계산 / 피부 점수 계산 / 분석결과 / 추천 화장품 
 ## API 구조
 아직 모름
 
