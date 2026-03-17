@@ -14,6 +14,8 @@
 
 학습방법 : 지도 학습식
 
+모델명: model.pkl / 데이터 Sleep_health_and_lifestyle_dataset.csv
+
 # 작동원리
 
 수면 많으면 건강 ↑
