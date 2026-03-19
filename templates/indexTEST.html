@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Skin & Health AI 분석</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(135deg,#eef2f7,#ffffff);
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:40px;
+margin:0;
+}
+
+/* 🔥 상단 태그 */
+.topTag{
+position:fixed;
+top:15px;
+right:20px;
+font-size:13px;
+color:#555;
+background:rgba(255,255,255,0.7);
+padding:6px 12px;
+border-radius:12px;
+backdrop-filter:blur(5px);
+box-shadow:0 5px 10px rgba(0,0,0,0.05);
+text-decoration:none;
+transition:0.3s;
+}
+
+.topTag:hover{
+transform:scale(1.05);
+}
+
+/* 카드 */
+.card{
+width:480px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+label{
+font-size:13px;
+margin-top:10px;
+display:block;
+color:#444;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:10px;
+border-radius:8px;
+border:1px solid #ccc;
+transition:0.2s;
+}
+
+input:focus,select:focus{
+border-color:#4CAF50;
+outline:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#4CAF50;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#45a049;
+}
+
+/* 결과 박스 */
+.resultBox{
+margin-top:12px;
+padding:12px;
+background:#f4f8f4;
+border-radius:10px;
+font-size:14px;
+}
+
+/* 그래프 */
+.chartBox{
+width:650px;
+background:white;
+padding:25px;
+border-radius:20px;
+margin-top:30px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔥 GitHub + 이름 -->
+<a href="https://github.com/baebsae3123" target="_blank" class="topTag">
+👤 baebsae3123 | GitHub
+</a>
+
+<div class="card">
+
+<h2>🌿 Skin & Health AI 분석</h2>
+
+<label>나이</label>
+<input id="age" type="number" placeholder="예: 25">
+
+<label>수면 시간 (시간)</label>
+<input id="sleep" type="number" placeholder="7">
+
+<label>스트레스 (1~10)</label>
+<input id="stress" type="number">
+
+<label>신체 활동 (1~10)</label>
+<input id="activity" type="number">
+
+<label>심박수 (bpm)</label>
+<input id="heart" type="number">
+
+<label>걸음 수</label>
+<input id="steps" type="number">
+
+<label>BMI</label>
+<select id="bmi">
+<option value="Underweight">저체중</option>
+<option value="Normal" selected>정상</option>
+<option value="Overweight">과체중</option>
+<option value="Obese">비만</option>
+</select>
+
+<button onclick="runAI()">AI 분석 실행</button>
+
+<div class="resultBox">
+<b>🧠 건강 점수</b>
+<div id="healthScore">-</div>
+</div>
+
+<div class="resultBox">
+<b>🌿 피부 점수</b>
+<div id="skinScore">-</div>
+</div>
+
+<div class="resultBox">
+<b>📊 분석 결과</b>
+<div id="comment">-</div>
+</div>
+
+<div class="resultBox">
+<b>🧴 추천 화장품</b>
+<div id="products">-</div>
+</div>
+
+<div class="resultBox">
+<b>⚠️ 건강 경고</b>
+<div id="warning">-</div>
+</div>
+
+</div>
+
+<div class="chartBox">
+<canvas id="chart"></canvas>
+</div>
+
+<script>
+
+let chart=null;
+
+async function runAI(){
+
+const data={
+
+age:Number(document.getElementById("age").value||25),
+sleep_duration:Number(document.getElementById("sleep").value||7),
+stress_level:Number(document.getElementById("stress").value||5),
+activity:Number(document.getElementById("activity").value||5),
+heart_rate:Number(document.getElementById("heart").value||70),
+daily_steps:Number(document.getElementById("steps").value||5000),
+bmi:document.getElementById("bmi").value
+
+};
+
+try{
+
+const res=await fetch("/predict",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+});
+
+const result=await res.json();
+
+let health=Math.round(result.health_score || 0);
+let skin=Math.round(result.skin_score || 0);
+
+document.getElementById("healthScore").innerText=health+" 점";
+document.getElementById("skinScore").innerText=skin+" 점";
+
+/* 🔥 코멘트 */
+let comment="";
+
+if(health>=80){
+comment="🔥 매우 건강한 상태입니다!";
+}
+else if(health>=50){
+comment="🙂 보통 수준입니다.";
+}
+else{
+comment="⚠️ 생활 습관 개선이 필요합니다.";
+}
+
+document.getElementById("comment").innerText=comment;
+
+/* 🔥 화장품 */
+let productList="";
+
+if(result.products){
+result.products.forEach(p=>{
+productList+="• "+p+"<br>";
+});
+}
+
+document.getElementById("products").innerHTML=productList || "추천 없음";
+
+/* 🔥 경고 */
+document.getElementById("warning").innerText = result.warning || "없음";
+
+drawGraph(health,skin);
+
+}catch(err){
+alert("AI 서버 오류");
+}
+
+}
+
+function drawGraph(health,skin){
+
+const ctx=document.getElementById("chart").getContext("2d");
+
+if(chart){
+chart.destroy();
+}
+
+chart=new Chart(ctx,{
+type:"bar",
+data:{
+labels:["Health Score","Skin Score"],
+datasets:[{
+label:"AI 분석 결과",
+data:[health,skin]
+}]
+},
+options:{
+scales:{
+y:{
+beginAtZero:true,
+max:100
+}
+}
+}
+});
+
+}
+
+</script>
+
+</body>
+</html>
