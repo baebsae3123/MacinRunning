@@ -1,7 +1,8 @@
 # MacinRunning
 2학년1학기 머신러닝
 
-## 발표 : https://www.miricanvas.com/login?redirect=%2Fv2%2Fko%2Fdesign2%2F996aaac8-050c-41c2-80b8-fb92c7168b3f%3Flocation%3Ddesign%26type%3Dcopy_link%26access%3Dlink%26permission%3Dviewer
+## 발표
+https://www.miricanvas.com/login?redirect=%2Fv2%2Fko%2Fdesign2%2F996aaac8-050c-41c2-80b8-fb92c7168b3f%3Flocation%3Ddesign%26type%3Dcopy_link%26access%3Dlink%26permission%3Dviewer
 
 ## 목표: 여드름 피부 상태가 매일 달라서 뭐 써야할지에 대해 
 
