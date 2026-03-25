@@ -1,6 +1,9 @@
 # MacinRunning
 2학년1학기 머신러닝 - 여드름 피부 상태 피드백 프로젝트
 
+# 프로젝트 참가 1명
+황인성 
+
 ## 발표
 [![Design 보기](https://img.shields.io/badge/🎨%20Design%20View-MiriCanvas-FF6F61?style=for-the-badge)](https://www.miricanvas.com/login?redirect=%2Fv2%2Fko%2Fdesign2%2F996aaac8-050c-41c2-80b8-fb92c7168b3f%3Flocation%3Ddesign%26type%3Dcopy_link%26access%3Dlink%26permission%3Dviewer)
 
