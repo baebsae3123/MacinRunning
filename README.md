@@ -80,22 +80,34 @@
 
 # 2주제 발표
 
-## 모델선택이유
- RandomForestRegressor / XGBRegressor / KMeans  등을 선택했는데
- 
- 🔹 RandomForestRegressor
-다양한 "환자" 특징을 고려한 안정적인 예측 성능 확보 를 위해
-과적합을 줄이고 기본 성능 비교 기준 모델로 활용
+# 📊 모델별 선택 이유
+🔹 LinearRegression
+변수 간 기본적인 선형 관계를 확인하기 위해 사용
 
-🔹 XGBRegressor
+다른 모델과 비교하기 위한 기준(Baseline) 모델
+
+
+데이터의 기본적인 선형 관계를 파악하고, 성능 비교 기준으로 활용하기 위해 선택하였다.
+
+🔹 RandomForestRegressor
+여러 트리를 활용하여 안정적인 예측 성능 확보
+
+과적합을 줄이고 일반화 성능이 우수
+
+
+앙상블 기법을 통해 안정적이고 신뢰성 있는 예측 성능을 확보하기 위해 선택하였다.
+
+🔹 XGBRegressor (XGBoost)
 Gradient Boosting 기반으로 높은 예측 정확도 기대
-RandomForest와 비교하여 성능 개선 여부 분석
 
-🔹 K-Means Clustering
-비지도 학습을 통해 데이터의 잠재적 구조 파악
-유사한 특성을 가진 데이터 간 군집 형성 및 패턴 분석
+복잡한 데이터 패턴을 효과적으로 학습
 
+Boosting 기법을 활용하여 높은 예측 성능과 복잡한 패턴 학습을 위해 선택하였다.
 
+🔹 SVR (Support Vector Regression)
+커널 함수를 활용하여 비선형 데이터 학습 가능
+
+다른 방식의 모델과 성능 비교 목적
 ## 성능비교
 모델별결과를지표로비교분석
 
