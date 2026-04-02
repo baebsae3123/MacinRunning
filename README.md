@@ -140,6 +140,8 @@ SVR은 데이터 특성과 맞지 않아 낮은 성능을 보였다.
 | 장점     | 구현 간단, 안정성 높음                  | 높은 성능, 복잡한 데이터에 강함                  |
 | 단점     | 세밀한 예측 한계                      | 튜닝 필요, 계산 비용 높음                     |
 
+## 개인적으로 XGBoost가 더 좋은 성능이 나온이유는 틀린 부분을 더 집중적으로 수정하기떄문에 더 좋은 성능의 모델이 되지않았을까 생각합나다.
+
 <img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/dce7a8d4-5cda-4ce1-b379-15f47c30520a" />
 
 <img width="700" height="435" alt="image" src="https://github.com/user-attachments/assets/52397d96-061e-4713-b623-d4014ea764d9" />
