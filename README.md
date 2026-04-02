@@ -77,6 +77,35 @@
 머신러닝은 컴퓨터가 데이터로부터 스스로 학습하는 기술이다.
 사람이 규칙을 직접 만드는 대신 데이터 패턴을 찾아 예측한다
 
+---
+
+# 1주제 발표
+
+1 문제 정의서
+해결할 문제와 예측 목표를 구체적으로 설명
+
+2 데이터 설명
+출처 : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset?resource=download)
+크기
+주요
+변수정리
+
+
+3 기본 모델 실행
+첫 번째 ML 모델 실행 결과 제시 : 첫번째 모델 RandomForestRegressor 모델 사용
+
+<img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/ae6d55ca-d7c8-4f6e-83e9-239c704ca19e" />
+다른모델에 비해 성능이 좋지 못함
+
+4 성능 지표 해석
+Accuracy, Precision 등 기본 지표 설명
+RandomForest	=  Accuracy(0.008) , Precision(0.995)
+
+5 현재 한계 정리
+모델의 문제점과 개선 방향 정리
+더 정확도 좋은 모델을 써야겠다.
+
+---
 
 # 2주제 발표
 
