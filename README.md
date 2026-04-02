@@ -109,7 +109,9 @@ RandomForest와 비교하여 성능 개선 여부 분석
 
 ## 결과해석
 어떤모델이왜더좋은가
+
 <img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/dce7a8d4-5cda-4ce1-b379-15f47c30520a" />
+
 <img width="700" height="435" alt="image" src="https://github.com/user-attachments/assets/52397d96-061e-4713-b623-d4014ea764d9" />
 
 
