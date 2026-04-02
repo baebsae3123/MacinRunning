@@ -81,13 +81,36 @@
 # 2주제 발표
 
 ## 모델선택이유
-왜이모델을선택했는지설명
+ RandomForestRegressor / XGBRegressor / KMeans  등을 선택했는데
+ 
+ 🔹 RandomForestRegressor
+다양한 "환자" 특징을 고려한 안정적인 예측 성능 확보 를 위해
+과적합을 줄이고 기본 성능 비교 기준 모델로 활용
+
+🔹 XGBRegressor
+Gradient Boosting 기반으로 높은 예측 정확도 기대
+RandomForest와 비교하여 성능 개선 여부 분석
+
+🔹 K-Means Clustering
+비지도 학습을 통해 데이터의 잠재적 구조 파악
+유사한 특성을 가진 데이터 간 군집 형성 및 패턴 분석
+
 
 ## 성능비교
 모델별결과를지표로비교분석
 
+| 순위 | 모델               | MSE (낮을수록 좋음) | R² (높을수록 좋음) | 평가          |
+| -- | ---------------- | ------------- | ------------ | ----------- |
+| 🥇 | XGBoost          | 0.003         | 0.998        | 가장 정확       |
+| 🥈 | RandomForest     | 0.008         | 0.995        | 안정적, 높은 성능  |
+| 🥉 | LinearRegression | 0.133         | 0.912        | 기본 모델 대비 양호 |
+| ❌  | SVR              | 1.162         | 0.23         | 성능 낮음       |
+
+
 ## 결과해석
 어떤모델이왜더좋은가
+<img width="743" height="466" alt="image" src="https://github.com/user-attachments/assets/dce7a8d4-5cda-4ce1-b379-15f47c30520a" />
+<img width="700" height="435" alt="image" src="https://github.com/user-attachments/assets/52397d96-061e-4713-b623-d4014ea764d9" />
 
 
 # 실행방법
