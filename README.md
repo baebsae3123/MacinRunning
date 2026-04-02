@@ -18,13 +18,6 @@
 | 번호 | 사용 모델                 |
 | -- | --------------------- |
 | 1  | RandomForestRegressor |
-| 2  |                       |
-| 3  |                       |
-| 4  |                       |
-| 5  |                       |
-| 6  |                       |
-| 7  |                       |
-| 8  |                       |
 
 
 
@@ -86,9 +79,9 @@
 
 2 데이터 설명
 출처 : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset?resource=download)
-크기
-주요
-변수정리
+크기 : 350개
+주요 변수정리 : Acne_Count	여드름 개수 ,Sebum_Level	피지량 (1~3) , Skin_Irritation	피부 자극 (1~3)
+Sleep_Hours	수면시간 ,Oily_Food	기름진 음식 먹었는지 ,Water_Intake_ml	물 섭취량
 
 
 3 기본 모델 실행
