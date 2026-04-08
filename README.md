@@ -105,6 +105,7 @@ RandomForest	=  Accuracy(0.008) , Precision(0.995)
 # 📊 모델별 선택 이유
 
 중요하게 생각하는 4가지만 뽑음 ★★★
+
 🔹 LinearRegression 
 변수 간 기본적인 선형 관계를 확인하기 위해 사용 
 
