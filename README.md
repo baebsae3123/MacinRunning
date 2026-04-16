@@ -184,6 +184,8 @@ SVR은 데이터 특성과 맞지 않아 낮은 성능을 보였다.
 
 <img width="700" height="435" alt="image" src="https://github.com/user-attachments/assets/52397d96-061e-4713-b623-d4014ea764d9" />
 
+# 데이터 머신러닝 모델 실험 Colab
+https://colab.research.google.com/drive/1ex2DMlim6Y9Qip76KlFq6nd9BvoYTYjL#scrollTo=ZBVbQBGFHzTj
 
 # 실행방법
 pyrhon app.py
