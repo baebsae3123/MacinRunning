@@ -184,6 +184,21 @@ SVR은 데이터 특성과 맞지 않아 낮은 성능을 보였다.
 
 <img width="700" height="435" alt="image" src="https://github.com/user-attachments/assets/52397d96-061e-4713-b623-d4014ea764d9" />
 
+# 3주차 반복 수정 기록
+
+하이퍼파라미터 조정
+
+learning rate, max depth, regularization 등
+
+데이터 전처리 변경
+
+feature scaling, feature selection, 데이터 확장
+
+제출물 작성
+
+모델 비교표, 성능 그래프, 변화 원인 분석
+
+
 # 데이터 머신러닝 모델 실험 Colab
 https://colab.research.google.com/drive/1ex2DMlim6Y9Qip76KlFq6nd9BvoYTYjL#scrollTo=ZBVbQBGFHzTj
 
