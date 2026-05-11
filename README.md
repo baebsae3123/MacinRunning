@@ -186,17 +186,100 @@ SVR은 데이터 특성과 맞지 않아 낮은 성능을 보였다.
 
 # 3주차 반복 수정 기록
 
-하이퍼파라미터 조정
+## 하이퍼파라미터 조정
 
 learning rate, max depth, regularization 등
 
-데이터 전처리 변경
+| 구분                | 적용 내용               | 코드 예시                                             | 목적              | 기대 효과             |   |
+| ----------------- | ------------------- | ------------------------------------------------- | --------------- | ----------------- | - |
+| 하이퍼파라미터 조정        | learning_rate 조정    | `"learning_rate": [0.01, 0.05, 0.1]`              | 학습 속도 최적화       | 과적합 감소, 안정적 학습    |   |
+| 하이퍼파라미터 조정        | max_depth 조정        | `"max_depth": [3, 4, 5]`                          | 트리 깊이 조절        | 복잡도 조절, 일반화 성능 향상 |   |
+| 하이퍼파라미터 조정        | regularization 적용   | `"reg_alpha": [0, 0.1]`<br>`"reg_lambda": [1, 2]` | 과적합 방지          | 노이즈 감소, 모델 안정화    |   |
+| 하이퍼파라미터 조정        | n_estimators 조정     | `"n_estimators": [100, 300]`                      | 트리 개수 조절        | 예측 성능 향상          |   |
+| 하이퍼파라미터 조정        | SVR 파라미터 조정         | `"C"`, `"gamma"`, `"epsilon"`                     | 오차 허용 범위 조절     | SVR 성능 개선         |   |
+
+---
+
+## 데이터 전처리 변경
 
 feature scaling, feature selection, 데이터 확장
 
-제출물 작성
+| 데이터 전처리           | Feature Scaling     | `StandardScaler()`                                | 변수 크기 통일        | 거리 기반 모델 성능 향상    |   |
+| 데이터 전처리           | 결측치 처리              | `X.fillna(X.mean())`                              | 빈 데이터 처리        | 학습 오류 방지          |   |
+| 데이터 전처리           | One-Hot Encoding    | `pd.get_dummies()`                                | 범주형 데이터 변환      | 모델 입력 가능          |   |
+| 데이터 전처리           | Blood Pressure 분리   | `"120/80" → 120, 80`                              | 문자열 수치화         | 정보 활용도 증가         |   |
+
+---
+
+| Feature Selection | 중요 변수 선택            | `SelectKBest()`                                   | 중요한 변수만 사용      | 노이즈 감소, 과적합 감소    |   |
+| 데이터 확장            | Stress_per_Sleep 생성 | `Stress Level / Sleep Duration`                   | 스트레스-수면 관계 반영   | 패턴 학습 강화          |   |
+| 데이터 확장            | Activity_Heart 생성   | `Activity / Heart Rate`                           | 활동량 대비 건강 상태 반영 | 건강 패턴 분석 강화       |   |
+| 데이터 확장            | Log_DailySteps 생성   | `np.log1p(Daily Steps)`                           | 극단값 완화          | 데이터 안정화           |   |
+| 모델 최적화            | GridSearchCV 사용     | `GridSearchCV()`                                  | 최적 파라미터 탐색      | 자동 성능 최적화         |   |
+| 모델 평가             | MSE 비교              | `mean_squared_error()`                            | 오차 측정           | 모델 정확도 비교         |   |
+| 모델 평가             | R² 비교               | `r2_score()`                                      | 설명력 측정          | 성능 비교             |   |
+| 군집 분석             | KMeans 적용           | `KMeans(n_clusters=3)`                            | 데이터 그룹화         | 수면 패턴 분석          |   |
+| 군집 분석             | Silhouette Score    | `silhouette_score()`                              | 군집 품질 평가        | 군집 정확도 확인         | _ |
+
+# 제출물 작성
 
 모델 비교표, 성능 그래프, 변화 원인 분석
+
+## 모델 비교표 
+
+| 모델                | 특징                  | 장점            | 단점            | 예상 성능   |
+| ----------------- | ------------------- | ------------- | ------------- | ------- |
+| Linear Regression | 선형 관계 기반 예측         | 구조 단순, 해석 쉬움  | 복잡한 패턴 학습 어려움 | 낮음 ~ 보통 |
+| RandomForest      | 여러 Decision Tree 결합 | 과적합 감소, 안정적   | 학습 시간 증가      | 높음      |
+| XGBoost           | Boosting 기반 트리 모델   | 매우 높은 예측 성능   | 파라미터 튜닝 필요    | 가장 높음   |
+| SVR               | 거리 기반 회귀 모델         | 비선형 데이터 처리 가능 | Scaling 필수    | 보통 ~ 높음 |
+| KMeans            | 비지도 군집화             | 데이터 패턴 그룹화 가능 | 예측 모델은 아님     | 군집 분석용  |
+
+---- 
+
+## 성능 그래프 
+
+<img width="617" height="613" alt="image" src="https://github.com/user-attachments/assets/9fc106f1-fbc8-45a5-958a-4a2c689831f8" />
+
+---
+
+## 그래프 변환 원인 분석
+
+
+Feature Scaling, Feature Selection,
+Feature Engineering을 적용하여
+데이터 품질을 개선하였고
+
+| 모델  | Scaling 전 R² | Scaling 후 R² |
+| --- | ------------ | ------------ |
+| SVR | 0.78         | 0.90         |
+
+| 모델  | Scaling 전 MSE | Scaling 후 MSE |
+| --- | ------------- | ------------- |
+| SVR | 0.45          | 0.21          |
+
+| 상태       | 변수 개수 | R²   |
+| -------- | ----- | ---- |
+| 전체 변수 사용 | 25개   | 0.91 |
+| 중요 변수 선택 | 15개   | 0.94 |
+
+또한 GridSearchCV를 이용한
+하이퍼파라미터 튜닝을 통해
+모델 성능을 최적화하였다.
+
+| 상태           | R²   |
+| ------------ | ---- |
+| 기본 XGBoost   | 0.91 |
+| 튜닝 후 XGBoost | 0.96 |
+
+| 상태    | MSE  |
+| ----- | ---- |
+| 기본 모델 | 0.25 |
+| 튜닝 후  | 0.12 |
+
+비교 결과 XGBoost 모델이
+가장 높은 성능을 보였으며,
+RandomForest 또한 안정적인 결과를 나타냈다.
 
 
 # 데이터 머신러닝 모델 실험 Colab
