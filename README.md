@@ -215,18 +215,7 @@ feature scaling, feature selection, 데이터 확장
 | 데이터 확장            | Activity_Heart 생성   | `Activity / Heart Rate`         | 활동량 대비 건강 상태 반영 | 건강 패턴 분석 강화    |
 | 데이터 확장            | Log_DailySteps 생성   | `np.log1p(Daily Steps)`         | 극단값 완화          | 데이터 안정화        |
 
-
 ---
-| ----------------- | ------------------- | ------------------------------------------------- | --------------- | ----------------- | - |
-| Feature Selection | 중요 변수 선택            | `SelectKBest()`                                   | 중요한 변수만 사용      | 노이즈 감소, 과적합 감소    |   |
-| 데이터 확장            | Stress_per_Sleep 생성 | `Stress Level / Sleep Duration`                   | 스트레스-수면 관계 반영   | 패턴 학습 강화          |   |
-| 데이터 확장            | Activity_Heart 생성   | `Activity / Heart Rate`                           | 활동량 대비 건강 상태 반영 | 건강 패턴 분석 강화       |   |
-| 데이터 확장            | Log_DailySteps 생성   | `np.log1p(Daily Steps)`                           | 극단값 완화          | 데이터 안정화           |   |
-| 모델 최적화            | GridSearchCV 사용     | `GridSearchCV()`                                  | 최적 파라미터 탐색      | 자동 성능 최적화         |   |
-| 모델 평가             | MSE 비교              | `mean_squared_error()`                            | 오차 측정           | 모델 정확도 비교         |   |
-| 모델 평가             | R² 비교               | `r2_score()`                                      | 설명력 측정          | 성능 비교             |   |
-| 군집 분석             | KMeans 적용           | `KMeans(n_clusters=3)`                            | 데이터 그룹화         | 수면 패턴 분석          |   |
-| 군집 분석             | Silhouette Score    | `silhouette_score()`                              | 군집 품질 평가        | 군집 정확도 확인         | _ |
 
 # 제출물 작성
 
