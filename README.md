@@ -277,6 +277,13 @@ Feature Engineering을 적용하여
 가장 높은 성능을 보였으며,
 RandomForest 또한 안정적인 결과를 나타냈다.
 
+그래서 정리하면
+
+Feature Scaling 은  변수들의 크기를 비슷하게 맞춰주는 작업을 해주었고
+Feature Selection는 중요한 변수만 선택해서 최적화 해주었고
+하이퍼 파라미터 튜닝은 여러 파라미터 조합 하고 교차 검증을 수행하여 최적 값을 만들어서 변환된거같습니다
+
+
 
 # 데이터 머신러닝 모델 실험 Colab
 https://colab.research.google.com/drive/1ex2DMlim6Y9Qip76KlFq6nd9BvoYTYjL#scrollTo=ZBVbQBGFHzTj
