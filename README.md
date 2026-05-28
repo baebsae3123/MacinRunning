@@ -285,7 +285,23 @@ Feature Scaling 은  변수들의 크기를 비슷하게 맞춰주는 작업을 
 Feature Selection는 중요한 변수만 선택해서 최적화 해주었고
 하이퍼 파라미터 튜닝은 여러 파라미터 조합 하고 교차 검증을 수행하여 최적 값을 만들어서 변환된거같습니다
 
+---
 
+실제 사용 시나리오
+
+누가, 어떤 상황에서 이 모델을 사용할 수 있는가?
+
+데이터 규모 적절성
+
+현실 환경에서 충분한 데이터를 확보할 수 있는가?
+
+비용 및 리스크
+
+오분류가 발생하면 어떤 위험이 있는가?
+
+모델 한계
+
+다른 환경에서도 일반화할 수 있는가?
 
 # 데이터 머신러닝 모델 실험 Colab
 https://colab.research.google.com/drive/1ex2DMlim6Y9Qip76KlFq6nd9BvoYTYjL#scrollTo=ZBVbQBGFHzTj
