@@ -378,6 +378,13 @@ Feature Selection는 중요한 변수만 선택해서 최적화 해주었고
 
 즉, 학습 데이터와 다른 사용자에게는 동일한 결과를 보장할 수 없다.
 
+---
+
+발표 형식 
+
+시연 7~10분 전체 프로젝트 과정 
+
+시연질의응답 5분 심층 구술 평가
 
 # 데이터 머신러닝 모델 실험 Colab
 https://colab.research.google.com/drive/1ex2DMlim6Y9Qip76KlFq6nd9BvoYTYjL#scrollTo=ZBVbQBGFHzTj
