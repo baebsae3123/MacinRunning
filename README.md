@@ -391,3 +391,11 @@ https://colab.research.google.com/drive/1ex2DMlim6Y9Qip76KlFq6nd9BvoYTYjL#scroll
 
 # 실행방법
 pyrhon app.py
+
+<img width="1450" height="753" alt="image" src="https://github.com/user-attachments/assets/4a3de643-7782-40e0-8db0-3840ed0ef806" />
+
+<img width="1548" height="833" alt="image" src="https://github.com/user-attachments/assets/6cd2dced-15ba-4942-bed6-f27ba32e338a" />
+
+<img width="1244" height="595" alt="image" src="https://github.com/user-attachments/assets/6e00558d-4560-4478-a04c-4b1bf68a8ec9" />
+
+
